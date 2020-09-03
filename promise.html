@@ -1,0 +1,35 @@
+<html>
+    <body></body>
+    <script>
+        function wxianfeng() {
+            // return Promise object
+            return fetch("http://wxianfeng.com")
+        }
+
+        function wxianfengThen() {
+            // return Promise object
+            return fetch("http://wxianfeng.com").then((res) => {
+                return res
+            })
+        }
+
+        // async, await 语法
+        async function doTrack() {
+            const res = await wxianfeng()
+            console.log(res)
+
+            const res1 = await wxianfengThen()
+            console.log(res1)
+        }
+
+        // promise then 语法
+        function doTrackPromise() {
+            wxianfeng().then((res) => {
+                console.log(res.body)
+            })
+        }
+
+        doTrack()
+        // doTrackPromise()
+    </script>
+</html>
