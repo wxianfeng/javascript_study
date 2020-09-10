@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  /**
+   *
+   * 测试 promise resolve, reject 返回值
+   *
+   */
+
+    function f(a) {
+      if (1 == a) {
+        return Promise.reject()
+      } else if (2 == a) {
+        return Promise.resolve(2)
+      }
+    }
+
+    async function main() {
+      const ret = await f(2)
+      console.log(ret) // 2
+
+      const retReject = await f(1)
+      console.log("end") // cant touch here
+    }
+
+    main()
+</script>
+
+</body>
+</html>
